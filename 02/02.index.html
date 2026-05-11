@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독도 지식 사전 | 주요 용어 정리</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; }
+        .category-card { transition: all 0.3s ease; cursor: pointer; }
+        .category-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1); }
+        .modal { display: none; position: fixed; z-index: 200; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+        .modal-content { background-color: #fefefe; margin: 10% auto; padding: 2rem; border-radius: 1rem; width: 90%; max-width: 500px; animation: slideIn 0.3s ease; }
+        @keyframes slideIn { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .nav-fixed { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(5px); border-bottom: 1px solid #e2e8f0; }
+    </style>
+</head>
+<body class="text-slate-800 pt-16">
+
+    <!-- Navigation Bar -->
+    <nav class="nav-fixed py-3 px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2 font-bold text-blue-900">
+                <i class="fas fa-book-open text-blue-600"></i>
+                <span>독도 지식 사전</span>
+            </div>
+            <a href="../index.html" class="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-blue-700 transition shadow-md">
+                <i class="fas fa-home"></i>
+                <span>홈</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-blue-900 text-white py-16 px-6 text-center">
+        <h1 class="text-4xl font-bold mb-4">독도 용어 사전</h1>
+        <p class="text-lg opacity-80 max-w-2xl mx-auto">지리, 역사, 법적 용어부터 주요 인물까지,<br>독도를 이해하기 위한 핵심 키워드를 정리했습니다.</p>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-6 md:p-12">
+        
+        <!-- Category: Geography -->
+        <section class="mb-16">
+            <div class="flex items-center gap-3 mb-8 border-b-2 border-blue-100 pb-2">
+                <i class="fas fa-map-marked-alt text-2xl text-blue-600"></i>
+                <h2 class="text-2xl font-bold">1. 지리 및 영역 관련 용어</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div onclick="openModal('동도와 서도', '독도를 구성하는 두 개의 주요 섬입니다. 동도에는 독도 경비대와 등대가 있으며, 서도에는 주민 숙소와 물골이 있습니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-blue-800">동도와 서도</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">독도를 구성하는 두 개의 주요 섬입니다...</p>
+                </div>
+                <div onclick="openModal('영해 (Territorial Sea)', '해안선(기선)으로부터 12해리(약 22km)까지의 바다로, 국가의 주권이 미치는 범위입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-blue-800">영해</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">해안선으로부터 12해리까지의 바다로, 국가의 주권이 미치는 범위입니다.</p>
+                </div>
+                <div onclick="openModal('배타적 경제수역 (EEZ)', '영해 바깥쪽 기선에서 200해리까지의 수역입니다. 연안국이 해양 자원의 탐사, 개발, 보존 등에 대한 권리를 가지는 영역입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-blue-800">EEZ</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">영해 바깥쪽 기선에서 200해리까지의 수역입니다.</p>
+                </div>
+                <div onclick="openModal('가스 하이드레이트', '불타는 얼음으로 불리는 고체 에너지원으로, 독도 부근에 약 6억 톤(국민이 약 30년간 사용 가능한 양)이 매장되어 있습니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-blue-800">가스 하이드레이트</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">독도 부근에 약 6억 톤이 매장된 고체 에너지원입니다.</p>
+                </div>
+                <div onclick="openModal('조면암', '독도와 울릉도를 구성하는 주요 암석으로, 지질학적으로 두 섬이 유사함을 보여주는 증거입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-blue-800">조면암</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">독도와 울릉도를 구성하는 주요 암석입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: History Documents -->
+        <section class="mb-16">
+            <div class="flex items-center gap-3 mb-8 border-b-2 border-amber-100 pb-2">
+                <i class="fas fa-file-alt text-2xl text-amber-600"></i>
+                <h2 class="text-2xl font-bold">2. 역사 사료 및 주요 문서</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div onclick="openModal('세종실록지리지 (1454)', '울릉도(무릉)와 독도(우산)가 날씨가 맑으면 서로 바라볼 수 있을 정도로 가까이 있음을 기록한 조선 초기 사료입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-amber-800">세종실록지리지</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">독도와 울릉도가 서로 바라볼 수 있음을 기록한 사료입니다.</p>
+                </div>
+                <div onclick="openModal('은주시청합기 (1667)', '일본 관리가 작성한 보고서로, 일본의 서쪽 끝 경계를 오키섬으로 규정하여 독도가 조선 땅임을 반증하는 일본 측 사료입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-amber-800">은주시청합기</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">독도가 일본 영토가 아님을 반증하는 일본 사료입니다.</p>
+                </div>
+                <div onclick="openModal('태정관 지령 (1877)', '당시 일본 최고 행정기관인 태정관이 울릉도와 독도가 일본과 관계가 없다고 공식적으로 인정한 문서입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-amber-800">태정관 지령</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">독도가 일본과 관계없음을 공식 인정한 문서입니다.</p>
+                </div>
+                <div onclick="openModal('대한제국 칙령 제41호 (1900)', '울릉도를 울도로 개칭하고 독도(석도)를 울도군의 관할 구역으로 명시하여 대한제국의 영토임을 국내외에 공포한 근대적 법령입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-amber-500">
+                    <h3 class="font-bold text-lg mb-2 text-amber-800">대한제국 칙령 제41호</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">독도를 울도군 관할로 명시한 핵심 문서입니다.</p>
+                </div>
+                <div onclick="openModal('시마네현 고시 제40호 (1905)', '일본이 독도를 다케시마로 명명하고 자신의 영토로 불법 편입시킨 고시로, 영유권 갈등의 주요 원인 중 하나입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-red-700">시마네현 고시 제40호</h3>
+                    <p class="text-slate-600 text-sm line-clamp-2">일본의 독도 불법 편입 고시입니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: Modern History -->
+        <section class="mb-16">
+            <div class="flex items-center gap-3 mb-8 border-b-2 border-emerald-100 pb-2">
+                <i class="fas fa-gavel text-2xl text-emerald-600"></i>
+                <h2 class="text-2xl font-bold">3. 현대사 및 갈등 관련 용어</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div onclick="openModal('SCAPIN 제677호 (1946)', '연합군 최고사령관 지령으로, 독도를 일본의 통치 및 행정 범위에서 공식적으로 제외하여 한국의 영토로 분류했습니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-800">SCAPIN 제677호</h3>
+                </div>
+                <div onclick="openModal('샌프란시스코 강화조약 (1951)', '제2차 세계대전 종료 후 연합국과 일본이 체결한 조약입니다. 일본의 로비로 독도가 반환 목록에 명시되지 않아 갈등의 원인이 되었습니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-800">샌프란시스코 강화조약</h3>
+                </div>
+                <div onclick="openModal('평화선 (1952)', '인접 해양의 주권을 보호하기 위해 선포한 해상 경계선으로, 독도를 포함한 평화선 안쪽이 대한민국의 관할임을 명확히 했습니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm border-l-4 border-l-emerald-500">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-800">평화선 (이승만 라인)</h3>
+                </div>
+                <div onclick="openModal('신한일 어업협정 (1998)', '배타적 경제수역(EEZ) 조항에 따라 체결된 협정으로, 독도 주변을 중간수역으로 설정하면서 영유권 훼손 논란이 발생했습니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                    <h3 class="font-bold text-lg mb-2 text-emerald-800">신한일 어업협정</h3>
+                </div>
+                <div onclick="openModal('다케시마의 날', '2005년 일본 시마네현 의회가 시마네현 고시 제40호를 기념하여 매년 2월 22일로 제정한 조례입니다.')" class="category-card bg-white p-6 rounded-xl border border-slate-200 shadow-sm text-red-600">
+                    <h3 class="font-bold text-lg mb-2">다케시마의 날</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category: Key Figures -->
+        <section class="mb-16">
+            <div class="flex items-center gap-3 mb-8 border-b-2 border-purple-100 pb-2">
+                <i class="fas fa-users text-2xl text-purple-600"></i>
+                <h2 class="text-2xl font-bold">4. 주요 인물</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div onclick="openModal('안용복', '조선 숙종 때 일본으로 건너가 울릉도와 독도가 조선의 영토임을 일본 막부로부터 확인받은 역사적 인물입니다.')" class="category-card bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-shield text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">안용복</h3>
+                    <p class="text-slate-500 text-sm">독도 영유권을 확인받은 조선의 영웅</p>
+                </div>
+                <div onclick="openModal('최종덕', '1968년부터 독도에 거주하며 1981년 주민등록을 이전한 대한민국 최초의 독도 주민입니다.')" class="category-card bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-home text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">최종덕</h3>
+                    <p class="text-slate-500 text-sm">최초의 독도 주민</p>
+                </div>
+                <div onclick="openModal('홍순칠', '1950년대 초 독도의용수비대를 조직하여 자발적으로 일본의 침투로부터 독도를 지켜낸 인물입니다.')" class="category-card bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-fist-raised text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">홍순칠</h3>
+                    <p class="text-slate-500 text-sm">독도의용수비대장</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Shell -->
+    <div id="termModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start mb-4">
+                <h2 id="modalTitle" class="text-2xl font-bold text-blue-900">용어 제목</h2>
+                <button onclick="document.getElementById('termModal').style.display='none'" class="text-slate-400 hover:text-slate-600">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div id="modalDescription" class="text-slate-700 leading-relaxed">
+                상세 설명이 여기에 표시됩니다.
+            </div>
+            <div class="mt-8 flex justify-end">
+                <button onclick="document.getElementById('termModal').style.display='none'" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-100 text-center text-slate-500 text-sm">
+        <p>&copy; 2024 독도 지식 아카이브 | 주요 용어 해설</p>
+    </footer>
+
+    <script>
+        function openModal(title, description) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = description;
+            document.getElementById('termModal').style.display = 'block';
+        }
+
+        function closeModal(event) {
+            if (event.target.id === 'termModal') {
+                document.getElementById('termModal').style.display = 'none';
+            }
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") {
+                document.getElementById('termModal').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
