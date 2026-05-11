@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -15,6 +15,9 @@
         .tab-content.active { display: block; }
         .timeline-item:hover { transform: translateX(10px); transition: all 0.3s ease; }
         .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        /* Style for external link buttons */
+        .link-btn { transition: all 0.2s ease; }
+        .link-btn:hover { background-color: #f1f5f9; color: #1d4ed8; }
     </style>
 </head>
 <body class="text-slate-800">
@@ -26,12 +29,24 @@
     </header>
 
     <!-- Navigation -->
-    <nav class="bg-white border-b sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto flex overflow-x-auto">
+    <nav class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex items-center overflow-x-auto whitespace-nowrap">
+            <!-- Internal Tab Buttons -->
             <button onclick="showTab('summary')" class="tab-btn px-6 py-4 font-bold border-b-2 border-blue-600 text-blue-600" id="btn-summary">핵심 요약</button>
             <button onclick="showTab('history')" class="tab-btn px-6 py-4 font-bold text-slate-500 hover:text-blue-600" id="btn-history">역사적 전개</button>
             <button onclick="showTab('issue')" class="tab-btn px-6 py-4 font-bold text-slate-500 hover:text-blue-600" id="btn-issue">주요 쟁점</button>
             <button onclick="showTab('perception')" class="tab-btn px-6 py-4 font-bold text-slate-500 hover:text-blue-600" id="btn-perception">인식의 차이</button>
+            
+            <!-- Separator -->
+            <div class="h-6 w-px bg-slate-200 mx-2"></div>
+
+            <!-- External Link Buttons -->
+            <a href="./01/index.html" class="link-btn px-6 py-4 font-bold text-slate-600 flex items-center hover:bg-slate-50">
+                <i class="fas fa-history mr-2 text-blue-500"></i>독도연표
+            </a>
+            <a href="./02/02.html" class="link-btn px-6 py-4 font-bold text-slate-600 flex items-center hover:bg-slate-50">
+                <i class="fas fa-book mr-2 text-blue-500"></i>독도용어
+            </a>
         </div>
     </nav>
 
