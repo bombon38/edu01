@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독도 영유권 갈등과 평화적 해법</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .timeline-item:hover { transform: translateX(10px); transition: all 0.3s ease; }
+        .card-shadow { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12 px-6 text-center">
+        <h1 class="text-4xl font-bold mb-4">독도 영유권 갈등의 역사와 미래</h1>
+        <p class="text-xl opacity-90 max-w-2xl mx-auto">역사적 전개와 현황 분석을 통한 평화적 해결 방안 브리핑</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto flex overflow-x-auto">
+            <button onclick="showTab('summary')" class="tab-btn px-6 py-4 font-bold border-b-2 border-blue-600 text-blue-600" id="btn-summary">핵심 요약</button>
+            <button onclick="showTab('history')" class="tab-btn px-6 py-4 font-bold text-slate-500 hover:text-blue-600" id="btn-history">역사적 전개</button>
+            <button onclick="showTab('issue')" class="tab-btn px-6 py-4 font-bold text-slate-500 hover:text-blue-600" id="btn-issue">주요 쟁점</button>
+            <button onclick="showTab('perception')" class="tab-btn px-6 py-4 font-bold text-slate-500 hover:text-blue-600" id="btn-perception">인식의 차이</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-6">
+        
+        <!-- Tab: Summary -->
+        <section id="summary" class="tab-content active space-y-8 animate-fadeIn">
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-8 rounded-2xl card-shadow border-t-4 border-blue-600">
+                    <h2 class="text-2xl font-bold mb-6 flex items-center"><i class="fas fa-star text-yellow-500 mr-3"></i>Executive Summary</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 font-bold px-2 py-1 rounded mr-3 mt-1">1</span>
+                            <p><strong>역사적 권원:</strong> 1946년 SCAPIN 제677호를 통해 독도는 한국 영토로 명확히 규정되었습니다.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 font-bold px-2 py-1 rounded mr-3 mt-1">2</span>
+                            <p><strong>갈등의 재점화:</strong> 1998년 신한일 어업협정의 '중간수역' 설정이 영유권 논란의 빌미가 되었습니다.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 font-bold px-2 py-1 rounded mr-3 mt-1">3</span>
+                            <p><strong>인식의 왜곡:</strong> 일본 교과서 내 '불법 점거' 서술 급증으로 미래 세대의 갈등이 심화되고 있습니다.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex items-center justify-center bg-slate-200 rounded-2xl">
+                    <div class="text-center p-6">
+                        <i class="fas fa-map-marked-alt text-6xl text-blue-600 mb-4"></i>
+                        <p class="text-slate-600">독도는 대한민국 경상북도 울릉군에 속한<br>대한민국의 고유 영토입니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: History Timeline -->
+        <section id="history" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl card-shadow">
+                <h2 class="text-2xl font-bold mb-8">전후 국제 질서와 독도 영유권 타임라인</h2>
+                <div class="space-y-6 border-l-2 border-blue-200 ml-4">
+                    <div class="timeline-item relative pl-8 pb-4">
+                        <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></div>
+                        <h3 class="text-lg font-bold text-blue-600">1946.01 - SCAPIN 제677호</h3>
+                        <p class="text-slate-600">연합군 최고사령관 지령. 독도를 일본의 통치 범위에서 제외하여 한국 영토로 명시.</p>
+                    </div>
+                    <div class="timeline-item relative pl-8 pb-4">
+                        <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-400 rounded-full border-4 border-white"></div>
+                        <h3 class="text-lg font-bold text-blue-600">1951.09 - 샌프란시스코 강화조약</h3>
+                        <p class="text-slate-600">일본의 로비로 최종 조약문에서 '독도' 명문화 누락. 갈등의 불씨가 됨.</p>
+                    </div>
+                    <div class="timeline-item relative pl-8 pb-4">
+                        <div class="absolute -left-[11px] top-1 w-5 h-5 bg-blue-600 rounded-full border-4 border-white"></div>
+                        <h3 class="text-lg font-bold text-blue-600">1952.01 - 평화선(이승만 라인) 선포</h3>
+                        <p class="text-slate-600">대한민국 영해 및 자원 보호를 위해 선포. 독도 수호의 실질적 근거.</p>
+                    </div>
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute -left-[11px] top-1 w-5 h-5 bg-red-400 rounded-full border-4 border-white"></div>
+                        <h3 class="text-lg font-bold text-red-600">1965.01 - 독도 밀약</h3>
+                        <p class="text-slate-600">국교정상화 과정에서의 암묵적 합의. 갈등을 봉인하려 했으나 명확한 해결은 지연됨.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Issues -->
+        <section id="issue" class="tab-content space-y-8">
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Fisheries Agreement -->
+                <div class="bg-white p-8 rounded-2xl card-shadow">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2">신한일 어업협정 (1998)</h3>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <p class="text-sm font-bold text-blue-800 mb-2">중간수역 설정의 명암</p>
+                        <p class="text-sm text-slate-700">양국의 EEZ 중첩 구간을 공동 관리 구역으로 설정. 하지만 독도가 이 안에 포함되면서 영유권 훼손 논란 발생.</p>
+                    </div>
+                    <div class="flex justify-between items-center text-center">
+                        <div class="w-1/2 p-2 border-r">
+                            <p class="text-xs text-slate-500 uppercase">한국 측 비판</p>
+                            <p class="text-sm font-bold">분쟁 지역화 빌미 제공</p>
+                        </div>
+                        <div class="w-1/2 p-2">
+                            <p class="text-xs text-slate-500 uppercase">일본 측 불만</p>
+                            <p class="text-sm font-bold">어민 경제적 손실 심화</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Issue -->
+                <div class="bg-white p-8 rounded-2xl card-shadow">
+                    <h3 class="text-xl font-bold mb-4 border-b pb-2 text-red-600">일본의 교육 왜곡 현황</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center bg-slate-50 p-3 rounded">
+                            <span>2008년 학습지도요령</span>
+                            <span class="text-xs font-bold bg-red-100 text-red-700 px-2 py-1 rounded">일본 영토 명시</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-50 p-3 rounded">
+                            <span>2011년 중학 교과서</span>
+                            <span class="text-xs font-bold bg-red-200 text-red-800 px-2 py-1 rounded">불법 점거 기술 시작</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-slate-50 p-3 rounded">
+                            <span>2015년 이후 초등 교과서</span>
+                            <span class="text-xs font-bold bg-red-600 text-white px-2 py-1 rounded">전종 '영토권' 서술</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab: Perception -->
+        <section id="perception" class="tab-content space-y-8">
+            <div class="bg-white p-8 rounded-2xl card-shadow">
+                <h2 class="text-2xl font-bold mb-6 text-center">한일 관계 개선을 위한 우선순위 인식 차이</h2>
+                <div class="h-80 w-full">
+                    <canvas id="perceptionChart"></canvas>
+                </div>
+                <div class="mt-8 grid md:grid-cols-2 gap-6">
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <h4 class="font-bold text-blue-700 mb-2">한국의 입장</h4>
+                        <p class="text-sm">독도 및 과거사 문제 해결이 관계 개선의 **필수 전제 조건**임. 역사 청산 없는 실리는 무의미하다고 판단.</p>
+                    </div>
+                    <div class="p-6 bg-slate-50 rounded-xl">
+                        <h4 class="font-bold text-red-700 mb-2">일본의 입장</h4>
+                        <p class="text-sm">정치적 대화와 경제 교류를 통한 **현실적 실리**를 우선시함. 독도 문제는 관리 대상일 뿐 최우선 순위는 아님.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conclusion Card -->
+            <div class="bg-blue-900 text-white p-10 rounded-2xl card-shadow text-center">
+                <h2 class="text-2xl font-bold mb-4">평화적 해결을 위한 제언</h2>
+                <div class="grid md:grid-cols-3 gap-6 text-sm">
+                    <div class="p-4 border border-blue-700 rounded-lg">
+                        <i class="fas fa-brain text-2xl mb-2 text-blue-300"></i>
+                        <h5 class="font-bold mb-2">이성적 대응</h5>
+                        <p>감정적 혐오보다는 정확한 사료와 국제법적 근거 확보</p>
+                    </div>
+                    <div class="p-4 border border-blue-700 rounded-lg">
+                        <i class="fas fa-globe text-2xl mb-2 text-blue-300"></i>
+                        <h5 class="font-bold mb-2">외교적 홍보</h5>
+                        <p>독도가 제국주의 침략의 첫 희생양이었다는 역사적 맥락 공유</p>
+                    </div>
+                    <div class="p-4 border border-blue-700 rounded-lg">
+                        <i class="fas fa-handshake text-2xl mb-2 text-blue-300"></i>
+                        <h5 class="font-bold mb-2">미래 지향적 관리</h5>
+                        <p>일본의 분쟁지화 전략 차단 및 실효적 지배 공고화</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 bg-slate-100 text-center text-slate-500 text-sm">
+        <p>&copy; 2024 독도 영유권 분석 리포트 | 제공된 브리핑 자료를 바탕으로 재구성되었습니다.</p>
+    </footer>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            // Remove active classes from buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('border-blue-600', 'text-blue-600');
+                btn.classList.add('text-slate-500');
+            });
+            
+            // Show selected content
+            document.getElementById(tabId).classList.add('active');
+            // Highlight selected button
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('text-slate-500');
+            activeBtn.classList.add('border-blue-600', 'text-blue-600', 'border-b-2');
+
+            // Re-render chart if perception tab is opened
+            if (tabId === 'perception') {
+                renderChart();
+            }
+        }
+
+        let chartInstance = null;
+        function renderChart() {
+            const ctx = document.getElementById('perceptionChart').getContext('2d');
+            
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            chartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['독도/과거사 문제 해결', '역사 인식 해소', '정치적 대화', '경제 교류'],
+                    datasets: [
+                        {
+                            label: '한국인 (%)',
+                            data: [62, 34, 15, 12],
+                            backgroundColor: 'rgba(30, 58, 138, 0.8)',
+                            borderColor: 'rgb(30, 58, 138)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: '일본인 (%)',
+                            data: [15, 20, 37, 28],
+                            backgroundColor: 'rgba(220, 38, 38, 0.8)',
+                            borderColor: 'rgb(220, 38, 38)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Initial setup
+        window.onload = () => {
+            // Default tab is already set to active in HTML
+        };
+    </script>
+</body>
+</html>
